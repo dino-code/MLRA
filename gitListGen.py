@@ -98,11 +98,6 @@ def webScraper(searchFrom, searchTo, lastPage, halfOne, halfTwo):
         soup = BeautifulSoup(response.content, 'html.parser')
 
         pageParser(soup, lastPage, page)
-###########################
-
-#Do individual searches
-#Do extension cpp and c++, js  py, but do them separately
-#Should get 5 or 6 thousand repositories
 
 #os.system("______"): list filenames command on command line to get a list of each repository's file names
 #Then count the number of file types
@@ -204,7 +199,3 @@ if searchFrom < 100:
 
 print("Program has completed its intended function.")
 
-
-
-# Need to do 3 different searches
-# Output 3 different csv files with the results

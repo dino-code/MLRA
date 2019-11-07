@@ -11,7 +11,8 @@ f = open("fullList.csv", "r")
 urlList = f.read()
 f.close()
 
-g = open("analysisData", 'a')
+g = open("analysisData.txt", 'a')
+h = open("lastRep.txt", 'a')
 
 urlList = urlList.split(",")
 
@@ -19,11 +20,13 @@ cppCounter = 0
 javaCounter = 0
 jsCounter = 0
 htmlCounter = 0
+pyCounter = 0
 
-for i in range(0, 25):
+for i in range(0, len(urlList)-1):
     url = urlList[i]
     directory = url.split("/")
     directory = directory[4]                      #Stores name of the local directory so it can be deleted later
+    g.write(directory+'\n'+url+'\n')
     
     url = url + ".git"
     os.system("git clone {}".format(url))        #Clones repository to local machine for analysis
@@ -38,34 +41,42 @@ for i in range(0, 25):
     filesList = filesList.split('\n')
 
     
-    for i in filesList:
-        if '.html' in i:
-            htmlCounter += 1
-        if '.cpp' in i:
+    for j in filesList:
+        if '.cpp' in j:
             cppCounter += 1
-        if '.java' in i:
-            javaCounter += 1
-        if '.js' in i:
+        if '.js' in j:
             jsCounter += 1
+        if '.java' in j:
+            javaCounter += 1
+        if '.html' in j:
+            htmlCounter += 1
+        if '.py' in j:
+            pyCounter += 1
     
     
     os.chdir(programDir)
     os.system("rm -r " + directory)              #Deletes repository clone after analysis
     
+    g.write(str(cppCounter)+'\n'+str(jsCounter)+'\n'+str(javaCounter)+'\n'+str(htmlCounter)+'\n')
     print("For " + url + ":")
     print("-------------------------------")
     print("cpp files:", cppCounter)
     print("javascript files:", jsCounter)
     print("java files:", javaCounter)
     print("html files:", htmlCounter)
+    print("python files:", pyCounter)
     print("=====================")
     
     cppCounter = 0
     jsCounter = 0
     javaCounter = 0
     htmlCounter = 0                  #make a function for this
+    pyCounter = 0
+    
+    h.write(str(i)+"\n")
 
-
+g.close()
+h.close()
 
 #for i in urlList:
 #    print(i)
