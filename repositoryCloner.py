@@ -32,9 +32,6 @@ for i in range(0, 25):
     
     os.chdir(directory)
     
-#    process = subprocess.Popen("git ls-files", shell = True, stdout = subprocess.PIPE)
-#    output = process.communicate()[0]
-    
     process = subprocess.run('git ls-files', shell=True, stdout = subprocess.PIPE)
     filesList = process.stdout.decode('utf-8')
     
