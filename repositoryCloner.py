@@ -1,5 +1,5 @@
 import os
-import bs4
+import subprocess
 
 # Use beautiful soup to gather the links on each page
 # Output a file that remembers the page last scraped
@@ -7,9 +7,75 @@ import bs4
 # Inner loops that downloads the repository contained in each link
 
 
-startPage = 'https://github.com/search?o=desc&p=1&q=language%3A+python%2C+language%3A+c%2B%2B&s=stars&type=Repositories'
+f = open("fullList.csv", "r")
+urlList = f.read()
+f.close()
 
-os.system("git clone {}".format(git_url))
+g = open("analysisData", 'a')
+
+urlList = urlList.split(",")
+
+cppCounter = 0
+javaCounter = 0
+jsCounter = 0
+htmlCounter = 0
+
+for i in range(0, 25):
+    url = urlList[i]
+    directory = url.split("/")
+    directory = directory[4]                      #Stores name of the local directory so it can be deleted later
+    
+    url = url + ".git"
+    os.system("git clone {}".format(url))        #Clones repository to local machine for analysis
+    
+    programDir = os.getcwd()
+    
+    os.chdir(directory)
+    
+#    process = subprocess.Popen("git ls-files", shell = True, stdout = subprocess.PIPE)
+#    output = process.communicate()[0]
+    
+    process = subprocess.run('git ls-files', shell=True, stdout = subprocess.PIPE)
+    filesList = process.stdout.decode('utf-8')
+    
+    filesList = filesList.split('\n')
+
+    
+    for i in filesList:
+        if '.html' in i:
+            htmlCounter += 1
+        if '.cpp' in i:
+            cppCounter += 1
+        if '.java' in i:
+            javaCounter += 1
+        if '.js' in i:
+            jsCounter += 1
+    
+    
+    os.chdir(programDir)
+    os.system("rm -r " + directory)              #Deletes repository clone after analysis
+    
+    print("For " + url + ":")
+    print("-------------------------------")
+    print("cpp files:", cppCounter)
+    print("javascript files:", jsCounter)
+    print("java files:", javaCounter)
+    print("html files:", htmlCounter)
+    print("=====================")
+    
+    cppCounter = 0
+    jsCounter = 0
+    javaCounter = 0
+    htmlCounter = 0                  #make a function for this
+
+
+
+#for i in urlList:
+#    print(i)
+
+#startPage = 'https://github.com/search?o=desc&p=1&q=language%3A+python%2C+language%3A+c%2B%2B&s=stars&type=Repositories'
+#
+#os.system("git clone {}".format(git_url))
 
 
 
