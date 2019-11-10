@@ -12,7 +12,7 @@ urlList = urlList.split(",")
 fileDict = {}
 totalDict = {}
 
-for i in range(0, 15):
+for i in range(0, len(urlList)-1):
     url = urlList[i]
     directory = url.split("/")
     directory = directory[4]                      #Stores name of the local directory so it can be deleted later
