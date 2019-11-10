@@ -9,15 +9,10 @@ g = open("analysisData.txt", 'a')
 
 urlList = urlList.split(",")
 
-cppCounter = 0
-cCounter = 0
-javaCounter = 0
-jsCounter = 0
-htmlCounter = 0
-pyCounter = 0
-hCounter = 0
+fileDict = {}
+totalDict = {}
 
-for i in range(1200, len(urlList)-1):
+for i in range(0, 15):
     url = urlList[i]
     directory = url.split("/")
     directory = directory[4]                      #Stores name of the local directory so it can be deleted later
@@ -39,43 +34,42 @@ for i in range(1200, len(urlList)-1):
     filesList = filesList.split('\n')
     
     for j in filesList:
-        j = j + " "
-        if '.cpp ' in j:
-            cppCounter += 1
-        if '.c ' in j:
-            cCounter += 1
-        if '.js ' in j:
-            jsCounter += 1
-        if '.java ' in j:
-            javaCounter += 1
-        if '.html ' in j:
-            htmlCounter += 1
-        if '.py ' in j:
-            pyCounter += 1
-        if '.h ' in j:
-            hCounter += 1
+        if '.' in j:
+            period = j.rfind('.')
+            fileExt = ''
+            
+            for i in range(period, len(j)):
+                fileExt += j[i]
+            
+            if fileExt != '.':
+                if fileExt in fileDict:
+                    totalDict[fileExt] += 1
+                    fileDict[fileExt] += 1               
+                else:
+                    totalDict[fileExt] = 1
+                    fileDict[fileExt] = 1
+        
+    for t in fileDict:
+        g.write(t+' '+str(fileDict[t])+'\n')
+        fileDict[t] = 0
+            
     
     os.chdir(programDir)
     os.system("rm -r " + directory)              #Deletes repository clone after analysis
-    
-    g.write(str(cppCounter)+'\n'+str(cCounter)+'\n'+str(jsCounter)+'\n'+str(javaCounter)+'\n'+str(htmlCounter)+'\n'+str(pyCounter)+'\n'+str(hCounter)+'\n')
-    print("For " + url + ":")
-    print("-------------------------------")
-    print("cpp files:", cppCounter)
-    print("c files:", cCounter)
-    print("javascript files:", jsCounter)
-    print("java files:", javaCounter)
-    print("html files:", htmlCounter)
-    print("python files:", pyCounter)
-    print("header files:", hCounter)
-    print("=====================")
-    
-    cppCounter = 0
-    cCounter = 0
-    jsCounter = 0
-    javaCounter = 0
-    htmlCounter = 0                  #make a function for this
-    pyCounter = 0
-    hCounter = 0
 
+    
+
+# This segment of code is what will go in the analysis script
+sumExts = 0
+critFiles = 0
+for i in totalDict:
+    if i == '.h' or i == '.c' or i == '.cpp' or i == '.java ' or i == '.py' or i == '.html':
+        critFiles += totalDict[i]
+    sumExts += totalDict[i]
+    print(i, totalDict[i])
+
+print('critical extensions', critFiles)
+print('total extensions', sumExts)
+print('percentage of critical files = ' + str((critFiles/sumExts)*100) +'%')
+    
 g.close()
