@@ -19,7 +19,8 @@ for i in range(0, len(analysisData)-1):                     # Create a list of a
         linkIndex.append(i)
 linkIndex.append(len(analysisData))
 
-print(linkIndex)
+print("Number of repositories:",len(linkIndex))
+
 
 start = linkIndex[0] + 1
 last = linkIndex[len(linkIndex)-1]
