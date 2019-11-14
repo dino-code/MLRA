@@ -1,16 +1,15 @@
-import sqlite3
 
 f = open("analysisData.txt", 'r')
-
 analysisData = f.read()
-
 analysisData = analysisData.split('\n')
 
 fileNum = ''
 fileExt = ''
 
-repAnalysis = {}
-repAnalysisFinal = {}
+repAnalysis = {}                              # Stores first run-through of file extensions and numbers
+repAnalysisFinal = {}                         # Stores edited version of file extensions and numbers
+# a dictionary that keeps track of the number of significant Extensions
+significantExtensions = {'.py': 0, '.java': 0, '.js': 0, '.cpp': 0, '.c': 0}                    
 
 linkIndex = []
 
@@ -54,7 +53,7 @@ for i in range(0, len(linkIndex)-1):
         fileNum = ''
         
         start += 1
-        
+
 counter1 = 0
 sumFiles1 = 0
 for i in repAnalysis:
@@ -62,7 +61,16 @@ for i in repAnalysis:
         repAnalysisFinal[i] = repAnalysis[i]
     sumFiles1 += repAnalysis[i]
     counter1 += 1
-    
+
+g = open("statistics.txt", 'w')
+
+g.write("There are ")
+g.write(str(counter1))
+g.write(" fileExts in repAnalysis\n")
+g.write("There are ")
+g.write(str(sumFiles1))
+g.write(" total files\n")
+
 print("There are", counter1, "fileExts in repAnalysis")
 print("There are", sumFiles1, "total files")
 print()
@@ -72,10 +80,36 @@ sumFiles2 = 0
 for i in repAnalysisFinal:
     counter2+=1
     sumFiles2 += repAnalysisFinal[i]
+    if i in significantExtensions:
+        significantExtensions[i] = repAnalysisFinal[i]
+        
+g.write("There are ")
+g.write(str(counter2))
+g.write(" fileExts in repAnalysisFinal\n")
+g.write("There are ")
+g.write(str(sumFiles2))
+g.write(" total files\n\n")
+
 print("There are", counter2, "fileExts in repAnalysisFinal")
 print("There are", sumFiles2, "total files")
 
 
+############
+# OUTPUT SOME BASIC STATISTICS ABOUT THE REPOSITORIES
+
+g.write("Percentages:\n")
+g.write("---------------\n")
+
+print()
+print("Percentages:\n")
+print("---------------\n")
+for i in significantExtensions:
+    g.write('{:<10}'.format(i))
+    g.write('  %.3f' % (100*significantExtensions[i]/sumFiles2)+'%\n')
+    print('{:<10}'.format(i), '  %.3f' % (100*significantExtensions[i]/sumFiles2)+'%')
+
+
+g.close()
 ################################
 # CREATING SQL DATABASE
 
