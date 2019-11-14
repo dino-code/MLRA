@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-f = open("fullList.csv", "r")
+f = open("newFullList.csv", "r")
 urlList = f.read()
 f.close()
 
@@ -38,8 +38,11 @@ for i in range(0, len(urlList)-1):
             period = j.rfind('.')
             fileExt = ''
             
-            for i in range(period, len(j)):
-                fileExt += j[i]
+            for q in range(period, len(j)):
+                if j[q] == '/':
+                    break
+                else:
+                    fileExt += j[q]
             
             if fileExt != '.':
                 if fileExt in fileDict:
@@ -52,6 +55,8 @@ for i in range(0, len(urlList)-1):
     for t in fileDict:
         g.write(t+' '+str(fileDict[t])+'\n')
         fileDict[t] = 0
+    
+    print(i)
             
     
     os.chdir(programDir)
