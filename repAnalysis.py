@@ -1,3 +1,18 @@
+import os
+
+linkIndexList = []
+
+def databaseCreator(repAnalysisFinal):
+    conn = sqlite3.connect('MLRA.db')
+    c = conn.cursor()
+    
+    c.execute()
+
+def linkIndexFinder(linkIndexList, analysisData):
+    for i in range(0, len(analysisData)-1):                     # Create a list of all the indices where there is a url in the data
+        if "https://github.com/" in analysisData[i]:            # So that we can know how far to go when scraping.
+            linkIndexList.append(i)
+    linkIndexList.append(len(analysisData))
 
 f = open("analysisData.txt", 'r')
 analysisData = f.read()
@@ -11,25 +26,20 @@ repAnalysisFinal = {}                         # Stores edited version of file ex
 # a dictionary that keeps track of the number of significant Extensions
 significantExtensions = {'.py': 0, '.java': 0, '.js': 0, '.cpp': 0, '.c': 0}                    
 
-linkIndex = []
 
-for i in range(0, len(analysisData)-1):                     # Create a list of all the indices where there is a url in the data
-    if "https://github.com/" in analysisData[i]:            # So that we can know how far to go when scraping.
-        linkIndex.append(i)
-linkIndex.append(len(analysisData))
-
-print("Number of repositories:",len(linkIndex))
+linkIndexFinder(linkIndexList, analysisData)
+print("Number of repositories:",len(linkIndexList))
 
 
-start = linkIndex[0] + 1
-last = linkIndex[len(linkIndex)-1]
+start = linkIndexList[0] + 1
+last = linkIndexList[len(linkIndexList)-1]
 
-for i in range(0, len(linkIndex)-1):
-    if i != len(linkIndex)-1:
-        start = linkIndex[i]+1
-        finish = linkIndex[i+1]-2
+for i in range(0, len(linkIndexList)-1):
+    if i != len(linkIndexList)-1:
+        start = linkIndexList[i]+1
+        finish = linkIndexList[i+1]-2
     else:
-        start = linkIndex[i]
+        start = linkIndexList[i]
         finish = analysisData[len(analysisData)-1]
         
     while start != finish:
@@ -110,6 +120,10 @@ for i in significantExtensions:
 
 
 g.close()
+
+
+
+
 ################################
 # CREATING SQL DATABASE
 
