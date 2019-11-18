@@ -1,6 +1,13 @@
 import os
 
 linkIndexList = []
+wantedExtensions = ['.yml', '.txt', '.md', '.cpp', '.sln', '.hpp', '.html', '.h', '.cmake',
+                    '.pdf', '.c', '.css', '.js', '.sql', '.ttf', '.jpg', '.csv', '.mo', '.po',
+                    '.phtml', '.volt', '.gyp', '.py', '.xls', '.nsi', '.ac', '.xlsx', '.xcf',
+                    '.bat', '.lib', '.props', '.cmd', '.scm', '.java', '.pl', '.r', '.shtml',
+                    '.xlsm', '.bmp', '.eps', '.wmf', '.gif', '.doc', '.db', '.docx', '.swift',
+                    '.cshtml', '.cxx', '.pyx', '.psd', '.hh', '.htm', '.pxd',  '.mxml', '.pyc',
+                    '.dot', '.mp3', '.pyd', '.pyui', '.xhtml', '.m4a']
 
 def databaseCreator(repAnalysisFinal):
     conn = sqlite3.connect('MLRA.db')
@@ -13,6 +20,9 @@ def linkIndexFinder(linkIndexList, analysisData):
         if "https://github.com/" in analysisData[i]:            # So that we can know how far to go when scraping.
             linkIndexList.append(i)
     linkIndexList.append(len(analysisData))
+    
+#def removeExts(repAnalysisEdited, wantedExtensions, repAnalysisFinal):
+    
 
 f = open("analysisData.txt", 'r')
 analysisData = f.read()
@@ -22,7 +32,8 @@ fileNum = ''
 fileExt = ''
 
 repAnalysis = {}                              # Stores first run-through of file extensions and numbers
-repAnalysisFinal = {}                         # Stores edited version of file extensions and numbers
+repAnalysisEdited = {}                         # Stores edited version of file extensions and numbers
+repAnalysisFinal = {}
 # a dictionary that keeps track of the number of significant Extensions
 significantExtensions = {'.py': 0, '.java': 0, '.js': 0, '.cpp': 0, '.c': 0}                    
 
@@ -68,7 +79,7 @@ counter1 = 0
 sumFiles1 = 0
 for i in repAnalysis:
     if repAnalysis[i] > 20:
-        repAnalysisFinal[i] = repAnalysis[i]
+        repAnalysisEdited[i] = repAnalysis[i]
     sumFiles1 += repAnalysis[i]
     counter1 += 1
 
@@ -87,11 +98,11 @@ print()
 
 counter2 = 0
 sumFiles2 = 0
-for i in repAnalysisFinal:
+for i in repAnalysisEdited:
     counter2+=1
-    sumFiles2 += repAnalysisFinal[i]
+    sumFiles2 += repAnalysisEdited[i]
     if i in significantExtensions:
-        significantExtensions[i] = repAnalysisFinal[i]
+        significantExtensions[i] = repAnalysisEdited[i]
         
 g.write("There are ")
 g.write(str(counter2))
@@ -121,7 +132,11 @@ for i in significantExtensions:
 
 g.close()
 
+for i in repAnalysisEdited:
+    if i in wantedExtensions:
+        repAnalysisFinal[i] = repAnalysisEdited[i]
 
+print(repAnalysisFinal)
 
 
 ################################
