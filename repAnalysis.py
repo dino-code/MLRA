@@ -11,11 +11,12 @@ wantedExtensions = ['.yml', '.txt', '.md', '.cpp', '.sln', '.hpp', '.html', '.h'
                     '.cshtml', '.cxx', '.pyx', '.psd', '.hh', '.htm', '.pxd',  '.mxml', '.pyc',
                     '.dot', '.mp3', '.pyd', '.pyui', '.xhtml', '.m4a']
 
-def databaseCreator(repAnalysisFinal):
+def databaseCreator():
     conn = sqlite3.connect('MLRA.db')
     c = conn.cursor()
     
-    c.execute()
+    c.execute(".mode csv")
+    c.execute(".import \'MLRAdata.csv\' fileExt")
 
 def linkIndexFinder(linkIndexList, analysisData):
     for i in range(0, len(analysisData)-1):                     # Create a list of all the indices where there is a url in the data
@@ -38,9 +39,6 @@ def dataNormalizer(analysisData, linkIndexList):
                         '.mxml', '.pyc', '.dot', '.mp3', '.pyd', '.pyui', '.xhtml',
                         '.m4a']]
 
-
-    start = linkIndexList[0]
-    last = linkIndexList[len(linkIndexList)-1]
 
     # This for loop navigates analysisData
     for link in range(0, len(linkIndexList)-1):
@@ -152,6 +150,8 @@ for link in range(0, len(linkIndexList)-1):
         
         start += 1
 
+
+### Gathering some statistics about the data
 counter1 = 0
 sumFiles1 = 0
 for i in repAnalysis:
@@ -191,12 +191,6 @@ g.write(" total files\n\n")
 print("There are", counter2, "fileExts in repAnalysisFinal")
 print("There are", sumFiles2, "total files")
 
-print(linkIndexList)
-
-
-############
-# OUTPUT SOME BASIC STATISTICS ABOUT THE REPOSITORIES
-
 g.write("Percentages:\n")
 g.write("---------------\n")
 
@@ -214,6 +208,7 @@ g.close()
 for i in repAnalysisEdited:
     if i in wantedExtensions:
         repAnalysisFinal[i] = repAnalysisEdited[i]
+####################################################################
 
 normalizedData = dataNormalizer(analysisData, linkIndexList)
 columnsPd = normalizedData[0]
@@ -225,6 +220,6 @@ print(columnsPd)
 normalizedData.pop(0)
 
 df = pd.DataFrame(normalizedData, columns = columnsPd)
-
-print(df)
 df.to_csv('MLRAdata.csv')
+
+databaseCreator()
