@@ -37,7 +37,7 @@ def dataNormalizer(analysisData, linkIndexList):
                         '.eps', '.wmf', '.gif', '.doc', '.db', '.docx', '.swift',
                         '.cshtml', '.cxx', '.pyx', '.psd', '.hh', '.htm', '.pxd',
                         '.mxml', '.pyc', '.dot', '.mp3', '.pyd', '.pyui', '.xhtml',
-                        '.m4a']]
+                        '.m4a', '.cs']]
 
 
     # This for loop navigates analysisData
@@ -45,7 +45,7 @@ def dataNormalizer(analysisData, linkIndexList):
         
         row = ['', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0 ,0, 0,
-                0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0 ,0, 0]
+                0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0 ,0, 0, 0]
         
         if link != len(linkIndexList)-1:
             start = linkIndexList[link]+1
@@ -222,4 +222,4 @@ normalizedData.pop(0)
 df = pd.DataFrame(normalizedData, columns = columnsPd)
 df.to_csv('MLRAdata.csv')
 
-databaseCreator()
+#databaseCreator()

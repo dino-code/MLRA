@@ -18,3 +18,40 @@ As of November 13, 2019 there are:
 - 502 file extensions
 - 635,884 total files
 
+
+December 4, 2019
+
+To import data frame csv from repAnalysis.py to sqlite3, simply type commands ".mode csv" and then ".import MLRAdata.csv files1". Once that is done, you must create a new table called files:
+
+CREATE TABLE files (repName, repUrl , yml, txt, md, cpp,
+                        sln , hpp , html , h , cmake , pdf , c ,
+                        css , js , sql , ttf , jpg , csv , mo ,
+                        po , phtml , volt, gyp , py , xls , nsi ,
+                        ac , xlsx , xcf , bat , lib , props , cmd ,
+                        scm , java , pl , r , shtml , xlsm , bmp ,
+                        eps , wmf , gif , doc , db , docx , swift ,
+                        cshtml , cxx , pyx , psd , hh , htm , pxd ,
+                        mxml , pyc , dot , mp3 , pyd , pyui , xhtml ,
+                        m4a , cs);
+
+Then do:
+
+INSERT INTO files (repName, repUrl , yml, txt, md, cpp,
+                        sln , hpp , html , h , cmake , pdf , c ,
+                        css , js , sql , ttf , jpg , csv , mo ,
+                        po , phtml , volt, gyp , py , xls , nsi ,
+                        ac , xlsx , xcf , bat , lib , props , cmd ,
+                        scm , java , pl , r , shtml , xlsm , bmp ,
+                        eps , wmf , gif , doc , db , docx , swift ,
+                        cshtml , cxx , pyx , psd , hh , htm , pxd ,
+                        mxml , pyc , dot , mp3 , pyd , pyui , xhtml ,
+                        m4a , cs) SELECT repName, repUrl , yml, txt, md, cpp,
+                        sln , hpp , html , h , cmake , pdf , c ,
+                        css , js , sql , ttf , jpg , csv , mo ,
+                        po , phtml , volt, gyp , py , xls , nsi ,
+                        ac , xlsx , xcf , bat , lib , props , cmd ,
+                        scm , java , pl , r , shtml , xlsm , bmp ,
+                        eps , wmf , gif , doc , db , docx , swift ,
+                        cshtml , cxx , pyx , psd , hh , htm , pxd ,
+                        mxml , pyc , dot , mp3 , pyd , pyui , xhtml ,
+                        m4a , cs FROM files1;
