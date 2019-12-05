@@ -223,3 +223,25 @@ df = pd.DataFrame(normalizedData, columns = columnsPd)
 df.to_csv('MLRAdata.csv')
 
 #databaseCreator()
+
+# create table files1 (repName TEXT, repUrl TEXT, yml INT, txt INT, md INT, cpp INT,
+#                         sln INT, hpp INT, html INT, h INT, cmake INT, pdf INT, c INT,
+#                         css INT, js INT, sql INT, ttf INT, jpg INT, csv INT, mo INT,
+#                         po INT, phtml INT, volt, gyp INT, py INT, xls INT, nsi INT,
+#                         ac INT, xlsx INT, xcf INT, bat INT, lib INT, props INT, cmd INT,
+#                         scm INT, java INT, pl INT, r INT, shtml INT, xlsm INT, bmp INT,
+#                         eps INT, wmf INT, gif INT, doc INT, db INT, docx INT, swift INT,
+#                         cshtml INT, cxx INT, pyx INT, psd INT, hh INT, htm INT, pxd INT,
+#                         mxml INT, pyc INT, dot INT, mp3 INT, pyd INT, pyui INT, xhtml INT,
+#                         m4a INT, cs INT);
+# 
+# repName, repUrl , yml, txt, md, cpp,
+#                         sln , hpp , html , h , cmake , pdf , c ,
+#                         css , js , sql , ttf , jpg , csv , mo ,
+#                         po , phtml , volt, gyp , py , xls , nsi ,
+#                         ac , xlsx , xcf , bat , lib , props , cmd ,
+#                         scm , java , pl , r , shtml , xlsm , bmp ,
+#                         eps , wmf , gif , doc , db , docx , swift ,
+#                         cshtml , cxx , pyx , psd , hh , htm , pxd ,
+#                         mxml , pyc , dot , mp3 , pyd , pyui , xhtml ,
+#                         m4a , cs 

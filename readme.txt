@@ -55,3 +55,51 @@ INSERT INTO files (repName, repUrl , yml, txt, md, cpp,
                         cshtml , cxx , pyx , psd , hh , htm , pxd ,
                         mxml , pyc , dot , mp3 , pyd , pyui , xhtml ,
                         m4a , cs FROM files1;
+
+QUERY FOR SQL STATS:
+
+
+CREATE VIEW programmingLanguageStats AS
+
+SELECT round((SUM(CAST(cpp AS FLOAT))/(SUM(CAST(py AS FLOAT))+ SUM(CAST(java AS FLOAT)) + SUM(CAST(js AS FLOAT))
+                                 + SUM(CAST(cs AS FLOAT)) + SUM(CAST(c AS FLOAT)) + SUM(CAST(cpp AS FLOAT))
+                                 )), 4)*100 AS "C++ Percent",
+round((SUM(CAST(py AS FLOAT))/(SUM(CAST(py AS FLOAT))+ SUM(CAST(java AS FLOAT)) + SUM(CAST(js AS FLOAT))
+                                 + SUM(CAST(cs AS FLOAT)) + SUM(CAST(c AS FLOAT)) + SUM(CAST(cpp AS FLOAT))
+                                 )), 4)*100 AS "Python Percent",
+round((SUM(CAST(cs AS FLOAT))/(SUM(CAST(py AS FLOAT))+ SUM(CAST(java AS FLOAT)) + SUM(CAST(js AS FLOAT))
+                                 + SUM(CAST(cs AS FLOAT)) + SUM(CAST(c AS FLOAT)) + SUM(CAST(cpp AS FLOAT))
+                                 )), 4)*100 AS "C Sharp Percent",
+round((SUM(CAST(java AS FLOAT))/(SUM(CAST(py AS FLOAT))+ SUM(CAST(java AS FLOAT)) + SUM(CAST(js AS FLOAT))
+                                 + SUM(CAST(cs AS FLOAT)) + SUM(CAST(c AS FLOAT)) + SUM(CAST(cpp AS FLOAT))
+                                 )), 4)*100 AS "Java Percent",
+round((SUM(CAST(js AS FLOAT))/(SUM(CAST(py AS FLOAT))+ SUM(CAST(java AS FLOAT)) + SUM(CAST(js AS FLOAT))
+                                 + SUM(CAST(cs AS FLOAT)) + SUM(CAST(c AS FLOAT)) + SUM(CAST(cpp AS FLOAT))
+                                 )), 4)*100 AS "Javascript Percent",
+round((SUM(CAST(c AS FLOAT))/(SUM(CAST(py AS FLOAT))+ SUM(CAST(java AS FLOAT)) + SUM(CAST(js AS FLOAT))
+                                 + SUM(CAST(cs AS FLOAT)) + SUM(CAST(c AS FLOAT)) + SUM(CAST(cpp AS FLOAT))
+                                 )), 4)*100 AS "C Percent"
+
+FROM files1;
+
+SELECT * FROM programmingLanguageStats;
+
+
+CREATE VIEW totalFilesStats AS
+
+SELECT round((SUM(CAST(a.cpp AS FLOAT))/(SUM(CAST(b.total AS FLOAT))
+                                 )), 10)*100 AS "C++ Percent",
+round((SUM(CAST(py AS FLOAT))/(SUM(CAST(b.total AS FLOAT))
+                                 )), 10)*100 AS "Python Percent",
+round((SUM(CAST(cs AS FLOAT))/(SUM(CAST(b.total AS FLOAT))
+                                 )), 10)*100 AS "C Sharp Percent",
+round((SUM(CAST(java AS FLOAT))/(SUM(CAST(b.total AS FLOAT))
+                                 )), 10)*100 AS  "Java Percent",
+round((SUM(CAST(js AS FLOAT))/(SUM(CAST(b.total AS FLOAT))
+                                 )), 10)*100 AS  "Javascript Percent",
+round((SUM(CAST(c AS FLOAT))/(SUM(CAST(b.total AS FLOAT))
+                                 )), 10)*100 AS  "C Percent"
+
+FROM files1 a, totalFiles b;
+
+SELECT * FROM totalFilesStats;
