@@ -1,8 +1,0 @@
-Total Files: 621345.0
-Percentage of Programming File Extensions Compared to All File Extensions
--------------------------------------------------------------------------
-C++        :  7.41  % --> 46066.0 files
-C          :  7.51  % --> 46677.0 files
-Python     :  3.44  % --> 21380.0 files
-Javascript :  23.61 % --> 146712.0 files
-Java       :  0.54  % --> 3327.0 files
