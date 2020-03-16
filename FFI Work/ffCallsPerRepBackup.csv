@@ -1,0 +1,24 @@
+URL,KEYWORD1,FILE,LINES,KEYWORD2,FILE,LINES
+https://github.com/nanoric/c2py,PYBIND11_MODULE(,3rd_party/include/pybind11/detail/common.h,274 283 ,Python.h,3rd_party/Python37/include/Python.h,5 27 
+https://github.com/jiffyclub/cext23,cythonize(,setup.py,48 ,FFI(),cext23/cffi/cextcffi_build.py,5 
+https://github.com/Rizziepit/cffibuilder,FFI(),testing/callback_in_thread.py,6 ,Python.h,c/_cffi_backend.c,2 
+https://github.com/fredrikhl/py-ext-test,FFI(),ext_test/cffimath.py,8 ,Python.h,pymath.c,7 
+https://github.com/cournape/cython_export,cythonize(,cython/setup.py,12 ,Python.h,cython/_simple_client.c,1 
+https://github.com/achimnol/pykorea-cext-examples,FFI(),chi2-cffi/test.py,5 ,Python.h,chi2-capi/_chi2.c,1 
+https://github.com/mockystr/tp_matrix_extenstion,cythonize(,cython_matrix/setup.py,7 ,Python.h,cython_matrix/cython_matrix.c,16 18 
+https://github.com/konltk/kconv_Cython,cythonize(,setup.py,8 ,Python.h,kconv_wrapper.c,20 22 
+https://github.com/siri3us/extensions,cythonize(,cython/01_basics/fib_setup.py,5 ,Python.h,01_hello/hello.c,1 
+https://github.com/c-bata/python-c-api-example,cythonize(,setup.py,6 ,Python.h,fibonacci.c,1 
+https://github.com/acarl005/PyBloom,cythonize(,setup.py,14 ,Python.h,pybloom/pybloom.c,18 20 
+https://github.com/s3a-spatialaudio/visr-cpp-library-example,PYBIND11_MODULE(,3rd/pybind11/docs/advanced/cast/functional.rst,59 ,Python.h,3rd/pybind11/docs/benchmark.rst,84 
+https://github.com/paulross/xmlwriter,PYBIND11_MODULE(,xmlwriter/cpy/pbXmlWrite.cpp,98 ,Python.h,xmlwriter/cpp/XmlWrite.h,21 
+https://github.com/panpilkarz/pypow10,cythonize(,cython-based/setup.py,5 ,FFI(),cffi-based/cffipow10_builder.py,2 
+https://github.com/jmikeowen/PYB11Generator,PYBIND11_MODULE(,PYB11Generator/__init__.py,116 ,Python.h,docs/classes.rst,327 669 693 
+https://github.com/PDAL/python,cythonize(,setup.py,190 ,Python.h,pdal/PyPipeline.cpp,41 
+https://github.com/NateShoffner/PySnip,cythonize(,build.py,29 ,Python.h,pyspades/bytes_c.cpp,23 
+https://github.com/sdpython/pyquickhelper,cythonize(,_unittests/ut_helpgen/notebooks/td1a_cenonce_session_11.ipynb,494 ,Python.h,_unittests/ut_helpgen/notebooks_rst/having_a_form_in_a_notebook.ipynb,1047 
+https://github.com/bondgeek/pythonhacks,cythonize(,cython/PyQuant/setup.py,92 ,Python.h,cython/cythoncpp/rectangle.cpp,4 
+https://github.com/overfl0/Pythia,cythonize(,src/Pythia/python/adapter_import_test/cython_module_source/setup.py,5 ,Python.h,src/Pythia/EmbeddedPython.cpp,2 87 128 131 136 269 
+https://github.com/pganssle-talks/pygotham-2019-rust-extensions,cythonize(,code/cython_module/setup.py,6 ,Python.h,code/c_module/src/ext.c,1 
+https://github.com/kurazu/pycon2015,FFI(),examples/cffi.pycon,2 ,Python.h,examples/header.c,1 
+https://github.com/pganssle-talks/pylondinium-2019-rust-extensions,cythonize(,code/cython_module/setup.py,6 ,Python.h,code/c_module/src/ext.c,1 

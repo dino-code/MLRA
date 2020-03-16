@@ -1,0 +1,32 @@
+URL,KEYWORD1,FILE,LINES,KEYWORD2,FILE,LINES
+https://github.com/rencoreab/SharePoint-Software-Factory,pyObject,Libraries/SharePoint/12/Microsoft.SharePoint.Publishing.dll,Binary file Libraries/SharePoint/12/Microsoft.SharePoint.Publishing.dll matches ,Python.h,Libraries/ExtensionPack/IronPython.DLL,Binary file Libraries/ExtensionPack/IronPython.DLL matches 
+https://github.com/cournape/cython_export,cythonize(,cython/setup.py,12 ,Python.h,cython/_simple_client.c,1 
+https://github.com/yangfly/mtcnn,pyObject,src/core/pybing.cpp,76 ,Python.h,src/core/pybing.cpp,1 
+https://github.com/mockystr/tp_matrix_extenstion,cythonize(,cython_matrix/setup.py,7 ,Python.h,cython_matrix/cython_matrix.c,16 18 
+https://github.com/konltk/kconv_Cython,cythonize(,setup.py,8 ,Python.h,kconv_wrapper.c,20 22 
+https://github.com/siri3us/extensions,cythonize(,cython/01_basics/fib_setup.py,5 ,Python.h,01_hello/hello.c,1 
+https://github.com/c-bata/python-c-api-example,cythonize(,setup.py,6 ,Python.h,fibonacci.c,1 
+https://github.com/acarl005/PyBloom,cythonize(,setup.py,14 ,Python.h,pybloom/pybloom.c,18 20 
+https://github.com/panpilkarz/pypow10,cythonize(,cython-based/setup.py,5 ,Python.h,extension-based/extpow10.c,1 
+https://github.com/mhammond/pywin32,pyObject,adodbapi/adodbapi.py,719 721 722 724 ,Python.h,Pythonwin/Scintilla/src/LexHaskell.cxx,13 
+https://github.com/PDAL/python,cythonize(,setup.py,190 ,Python.h,pdal/PyPipeline.cpp,41 
+https://github.com/dynamsoft-dbr/python,pyObject,src/dbr.c,172 174 180 194 197 200 203 206 209 212 215 218 222 224 471 472 ,Python.h,src/dbr.c,1 
+https://github.com/NateShoffner/PySnip,cythonize(,build.py,29 ,Python.h,pyspades/bytes_c.cpp,23 
+https://github.com/Travis-Sun/pywin32,pyObject,adodbapi/adodbapi.py,922 924 926 ,Python.h,.hg/store/fncache,1635 
+https://github.com/sdpython/pyquickhelper,cythonize(,_unittests/ut_helpgen/notebooks/td1a_cenonce_session_11.ipynb,494 ,Python.h,_unittests/ut_helpgen/notebooks_rst/having_a_form_in_a_notebook.ipynb,1047 
+https://github.com/bondgeek/pythonhacks,cythonize(,cython/PyQuant/setup.py,92 ,Python.h,cython/cythoncpp/rectangle.cpp,4 
+https://github.com/overfl0/Pythia,cythonize(,src/Pythia/python/adapter_import_test/cython_module_source/setup.py,5 ,Python.h,src/Pythia/EmbeddedPython.cpp,2 87 128 131 136 269 
+https://github.com/arizvisa/pywin32,pyObject,adodbapi/adodbapi.py,717 719 720 722 ,Python.h,Pythonwin/Scintilla/src/LexHaskell.cxx,13 
+https://github.com/tml21/libtml-python,pyObject,doc/_tml.py,1379 1380 1397 1398 1415 1416 ,Python.h,src/common/_py_unicode.cpp,39 
+https://github.com/pganssle-talks/pygotham-2019-rust-extensions,cythonize(,code/cython_module/setup.py,6 ,Python.h,code/c_module/src/ext.c,1 
+https://github.com/hanya/pyuno3ext,pyObject,pyuno/inc/pyuno/pyuno.hxx,192 250 ,Python.h,pyuno/inc/pyuno/pyuno.hxx,31 34 
+https://github.com/pganssle-talks/pylondinium-2019-rust-extensions,cythonize(,code/cython_module/setup.py,6 ,Python.h,code/c_module/src/ext.c,1 
+https://github.com/Benjamin28/VSCode-Python-Coverage,pyObject,node_modules/ajv/dist/regenerator.min.js,2 ,Python.h,node_modules/argparse/lib/argument_parser.js,312 
+https://github.com/kracekumar/offline-python,pyObject,js/ace/ace.js,3111 3123 4385 10075 ,Python.h,js/lib/python2.7/config/Makefile,630 
+https://github.com/BabylonJS/Extensions,pyObject,LeaderBoard/Client/BABYLONJS.Leaderboard/js/ace/ace.js,1749 1761 3439 9730 ,Python.h,ForumArchive/acc/post_34333_page_1.js,1 
+https://github.com/megaboich/js-map-parser,pyObject,source/JsParser.NppPlugin/tools/ILMerge/ILMerge.exe,Binary file source/JsParser.NppPlugin/tools/ILMerge/ILMerge.exe matches ,Python.h,source/JsParser.Test/Parser/Source/Frameworks/angular_v1.4.0-rc.2.js,16748 
+https://github.com/RodneyMcQuain/Fast-Twitch-Games-ReactJS,pyObject,node_modules/ajv/dist/regenerator.min.js,2 ,Python.h,node_modules/argparse/lib/argument_parser.js,312 
+https://github.com/RodneyMcQuain/Fast-Twitch-Games-ReactJS-with-Redux,pyObject,node_modules/ajv/dist/regenerator.min.js,2 ,Python.h,node_modules/argparse/lib/argument_parser.js,312 
+https://github.com/tokyosheep/sample_json,pyObject,node_modules/lodash.assign/index.js,201 595 ,Python.h,node_modules/argparse/lib/argument_parser.js,312 
+https://github.com/raza11409652/TodoList,pyObject,node_modules/ajv/dist/regenerator.min.js,2 ,Python.h,node_modules/browser-sync-ui/public/js/app.js.map,1 
+https://github.com/brackets-userland/brackets-sass-lint,pyObject,node_modules/globule/node_modules/lodash/_baseAssign.js,1 14 ,Python.h,node_modules/argparse/lib/argument_parser.js,312 
