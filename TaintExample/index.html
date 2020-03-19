@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Taint Example Program</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h1 align = 'center'>Welcome to the Example Program</h1>
+<h3 align = 'center'>This program will accept numbers to build 2 matrices and then multiply them.</h3>
+
+<div class = matrix>
+    <p class = table-title>Matrix 1</p>
+    <table id = 'table1' align = 'center'>
+        <tr>
+            <td>
+                <input type = 'number'>
+            </td>
+            <td>
+                <input type = 'number'>
+            </td>
+            <td>
+                <input type = 'number'>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type = 'number'>
+            </td>
+            <td>
+                <input type = 'number'>
+            </td>
+            <td>
+                <input type = 'number'>
+            </td>
+        </tr>
+
+    </table>
+
+</div>
+
+<div class = matrix>
+    <p class = table-title>Matrix 2</p>
+    <table id = 'table2' align = 'center'>
+        <tr>
+            <td id = '[0][0]'>
+                <input type = 'number'>
+            </td>
+            <td>
+                <input type = 'number'>
+            </td>
+            <td>
+                <input type = 'number'>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type = 'number'>
+            </td>
+            <td>
+                <input type = 'number'>
+            </td>
+            <td>
+                <input type = 'number'>
+            </td>
+        </tr>
+
+    </table>
+
+
+</div>
+<input id = 'button' class = submit type="submit"/>
+
+</body>
+
+<script type = 'text/javascript' src = 'actions.js'></script>
+
+
+</html>

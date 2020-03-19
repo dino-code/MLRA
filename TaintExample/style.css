@@ -1,0 +1,14 @@
+.submit {
+    cursor: pointer;
+    margin-left: 48.5%;
+    margin-top: 10px;
+}
+
+.matrix {
+    padding-bottom: 30px;
+    align-self: center;
+}
+
+.table-title {
+    text-align: center;
+}
