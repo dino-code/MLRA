@@ -12,3 +12,14 @@
 .table-title {
     text-align: center;
 }
+
+#button1 {
+    cursor: pointer;
+    margin-left: 48.5%;
+    margin-top: 10px;
+    width: 300px;
+}
+
+.mat1Display {
+    text-align: center;
+}
