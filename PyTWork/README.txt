@@ -55,3 +55,5 @@ Will email Lyons for clarification.
 4/27/20
 
 Dr. Lyons suggested that I simply assign the return value of request.form to a variable and then push that variable to matMult.multiply(). Will attempt this now.
+
+This works! Vulnerability is returned. Emailed Lyons to update him on progress.
