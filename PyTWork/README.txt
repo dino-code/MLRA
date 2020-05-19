@@ -57,3 +57,43 @@ Will email Lyons for clarification.
 Dr. Lyons suggested that I simply assign the return value of request.form to a variable and then push that variable to matMult.multiply(). Will attempt this now.
 
 This works! Vulnerability is returned. Emailed Lyons to update him on progress.
+
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+
+4/28/20
+
+Dr. Lyons suggested I try the following:
+
+The only issue remaining is what is preventing it from chaining the assignments
+that start at your source and go to your sink.
+
+While we suspect that the for loop is the issue, you should be systematic about testing.
+1. Move your current 'fake' multiple line to just above your real multiply line. You should still get a vulnerability. This will prove that Pyt is processing all the lines between your source and your 'real' sink even if it does not find your 'real' vulnerability
+
+## This is true. There is still a vulnerability. 
+
+2. Write down by hand the chain of assignments from your sink and match each step in the chain by hand with your source code.
+
+##
+
+
+3. Move your 'fake' multiply line to each source code line where there is a step in the chain of assignments
+and put in the new assigned variable as the argument to multiply and check for vul
+
+
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+
+5/18/20
+
+I am going to change my program by turning the request data into a simple list of all the numbers contained. This list will then be passed into the matMult function where it will be manipulated by the C++ and then returned.
+
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+
+5/19/20
+
+Made changes to multilingual program. The pybind11 matMult.multiply function now takes the entire list of data from the request and manipulates it within C++. The function then returns a 2D vector.
+
+Now I'm going to test PyT on the new program.
