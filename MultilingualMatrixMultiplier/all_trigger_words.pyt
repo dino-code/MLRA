@@ -18,7 +18,8 @@
         "files[",
         "SQLAlchemy",
 	"form(",
-	"input("
+	"input(",
+	"request.form"
     ],
     "sinks": {
         "replace(": {
