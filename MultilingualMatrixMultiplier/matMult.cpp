@@ -154,4 +154,5 @@ PYBIND11_MODULE(matMult, m) {
     m.doc() = "pybind11 example plugin"; // optional module docstring
 
     m.def("multiply", &multiply, "A function which multiplies two numbers");
+    //m.def("test", &test, "A test for search string")
 }
