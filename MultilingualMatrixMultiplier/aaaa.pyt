@@ -22,6 +22,8 @@
 	"request.form"
     ],
     "sinks": {
+        "test(": {},
+        "multiply(": {},
         "replace(": {
             "sanitisers": [
                 "escape"
