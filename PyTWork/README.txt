@@ -97,3 +97,40 @@ I am going to change my program by turning the request data into a simple list o
 Made changes to multilingual program. The pybind11 matMult.multiply function now takes the entire list of data from the request and manipulates it within C++. The function then returns a 2D vector.
 
 Now I'm going to test PyT on the new program.
+
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+
+5/24/20
+
+The first thing I'm going to do is create a quick script that can parse .cpp files to search for m.def(. This script will then create a list of all the functions that are made into modules -- this list is then used to update the trigger files
+
+The second script will then take the new trigger file as an argument to run the pyt script.
+
+I finished off the day by creating a script that creates a dictionary of all cpp files contained (as keys) as well as their paths (values).
+ 
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+
+5/26/20
+
+
+Currently, my script identifies all the functions that are found in a cpp file. The next step is to write them as sinks in the trigger file. Need to figure out the best way of doing this.
+
+First, check if the strings are present, then perform.
+
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+
+5/27/20
+
+Today I need to write the keywords as sinks in the trigger file.
+- Open the trigger file
+- Find the right place to write the sinks
+- Write the sinks
+
+I wrote the program that identifies sinks and writes them to the trigger file. If I run into a problem with this, I can just write all the words into all the trigger files.
+
+Need to adjust my program so it takes a folder as an argument. Then I need to run pyt on my program.
+
+Now it does this -- takes a folder as an argument and runs pyt.
