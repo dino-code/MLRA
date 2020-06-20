@@ -1,0 +1,2 @@
+"(18, '~call_2 = ret_flask.request.form.to_dict()')","(18, '~call_1 = ret_list(~call_2)')","(18, 'data = ~call_1')","(19, 'data = [int(x) for x in data]')","(54, '~call_4 = ret_matMult.multiply(data)')"
+"(18, '~call_2 = ret_flask.request.form.to_dict()')","(18, '~call_1 = ret_list(~call_2)')","(18, 'data = ~call_1')","(19, 'data = [int(x) for x in data]')","(54, '~call_4 = ret_matMult.multiply(data)')","(54, 'mat_mult = ~call_4')","(59, ""~call_6 = ret_flask.render_template('index.html', data=mat_mult)"")"

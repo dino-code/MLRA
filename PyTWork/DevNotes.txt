@@ -134,3 +134,28 @@ I wrote the program that identifies sinks and writes them to the trigger file. I
 Need to adjust my program so it takes a folder as an argument. Then I need to run pyt on my program.
 
 Now it does this -- takes a folder as an argument and runs pyt.
+
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+
+6/3/20
+
+Today I am going to modify the pyt script within the pyt module located at '/opt/anaconda3/lib/python3.7/site-packages/python_taint-0.42-py3.7.egg/pyt/'. This is the local of the pyt module that is used during the script call.
+
+I am modifying the pyt __main__.py and __vulnerabilities__.py scripts to generate a csv file.
+
+Done successfully. A CSV file is now produced that details found vulnerabilities.
+
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+
+6/5/20
+
+I need to fix up my script because right now, it locates sinks within a single cpp file and tests the function calls on a 'main.py'. If the function doesn't have a 'main.py', the script just won't work. I need to program to check every python file to see if there is a call to the functions that are sinks.
+
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+
+6/20/20
+
+Move Multilingual Matrix Multiplier directory to PyTWork directory for the sake of organization. Need to test right now to see if it still works. Also, renamed this file DevNotes.txt.
