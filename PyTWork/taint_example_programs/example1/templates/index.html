@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Taint Example Program</title>
+    <style>
+        .submit {
+            cursor: pointer;
+            margin-left: 48.5%;
+            margin-top: 10px;
+        }
+
+        .matrix {
+            padding-bottom: 30px;
+            align-self: center;
+        }
+
+        .table-title {
+            text-align: center;
+        }
+
+        #button {
+            cursor: pointer;
+
+            margin-top: 40px;
+            width: 300px;
+        }
+
+        .table-title {
+            margin-top: 60px;
+            text-align: center;
+            text-decoration: underline;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        #solution {
+            margin-left: 47%;
+            margin-top: 10px;
+        }
+
+        #solutionHeader {
+            text-decoration: underline;
+        }
+
+    </style>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+
+</head>
+<body>
+<h1 align = 'center'>Welcome to the Example Program</h1>
+<h3 align = 'center'>This program will accept numbers to build 2 matrices and then multiply them.</h3>
+
+<div class = matrix>
+
+    <p class = table-title>Matrix Multiplication</p>
+
+    <form name = 'myFORM' id = 'matrices' action = 'http://127.0.0.1:5000/' method = 'POST' align="center">
+
+        <label>MATRIX 1</label><br>
+        <input name = '1' type = 'number' >
+        <input name = '2' type = 'number'>
+        <input name = '3' type = 'number'><br>
+
+        <input name = '4' type = 'number'>
+        <input name = '5' type = 'number'>
+        <input name = '6' type = 'number'> <br>
+
+        <input name = '7' type = 'number'>
+        <input name = '8' type = 'number'>
+        <input name = '9' type = 'number'><br>
+
+
+        <label>MATRIX 2</label><br>
+        <input name = '10' type = 'number' >
+        <input name = '11' type = 'number'>
+        <input name = '12' type = 'number'><br>
+
+        <input name = '13' type = 'number'>
+        <input name = '14' type = 'number'>
+        <input name = '15' type = 'number'> <br>
+
+        <input name = '16' type = 'number'>
+        <input name = '17' type = 'number'>
+        <input name = '18' type = 'number'><br>
+
+        <button id = 'button' onclick = myFunction()>Multiply </button>
+
+    </form>
+
+</div>
+
+<div id = 'solution'>
+    <h2 id = 'solutionHeader'>Solution</h2>
+
+    {% for row in data %}
+    <p>{{ row }}</p>
+    {% endfor %}
+
+</div>
+
+<script type = 'text/javascript'>
+
+    function myFunction() {
+        document.getElementById('matrix1').submit();
+        document.getElementById('matrix2').submit();
+    }
+
+</script>
+
+</body>
+</html>
+
+
+
+
+

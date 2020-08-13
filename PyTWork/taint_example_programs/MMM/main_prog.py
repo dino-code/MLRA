@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, render_template
+from flask import Flask, jsonify, request, render_template, make_response
 from flask_cors import CORS
 import numpy as np
 import matMult
@@ -53,10 +53,16 @@ def hello():
         #mat_mult = matMult.multiply(mmat1, mmat2)
         mat_mult = matMult.multiply(data)
         print('LOOK', mat_mult)
+        
+        response = make_response(render_template('index.html', data=mat_mult))
         #print("check it:", mat_mult)
         # if there is a POST request, the website is returned along with data. To see how the data is manipulated,
         # you can go to the javascript code and look for {{ data }} because that's where the data ends up.
-        return render_template('index.html', data=mat_mult)
+        return response
+        #return render_template('index.html', data=mat_mult)
 
     # this just returns the visible website.
     return render_template('index.html')
+
+def tamper_return(tampered_data):
+    return render_template('index.html', data=tampered_data)
