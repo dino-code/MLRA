@@ -15,7 +15,6 @@ import time
 
 app = Flask(__name__)
 CORS(app)
-app.secret_key = "hello"
 
 @app.route('/', methods=['POST', 'GET'])
 def main():
@@ -40,7 +39,7 @@ def main():
 
 # corrupt data app.route
 @app.route('/result')
-def corrupt():
+def otherReturn():
     mat = session.get('ans', None)
     mat = np.mat(mat).reshape(3,3)
     return render_template('index.html', data=mat)
@@ -51,9 +50,6 @@ def multiply(mat1, mat2):
     
     matrix1 = np.mat(np.reshape(mat1, (3,3)))
     matrix2 = np.mat(np.reshape(mat2, (3,3)))
-    
-    ans = matrix1.flatten().tolist()
-    session['ans'] = ans
 
     if num == 0:
         ans = matrix1 * matrix2
@@ -61,4 +57,4 @@ def multiply(mat1, mat2):
     else:
         ans = (matrix1 * matrix2) + 100
         session['ans'] = ans.flatten().tolist()
-        return redirect(url_for('corrupt'))
+        return redirect(url_for('result'))

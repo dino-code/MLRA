@@ -19,7 +19,8 @@
         "SQLAlchemy",
 	"form(",
 	"input(",
-	"request.form"
+	"request.form",
+	"session["
     ],
     "sinks": {
         "replace(": {
@@ -78,6 +79,7 @@
         "subprocess.check_call(": {},
         "subprocess.check_output(": {},
         "subprocess.run(": {},
-        "url_for(": {}
+        "url_for(": {},
+	"session[": {}
     }
 }
