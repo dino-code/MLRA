@@ -24,36 +24,22 @@ def main():
     if request.method == 'POST':
 
         # the POST request contains a form that the user submits. This code takes that data and places it in a dict.
-#        data = request.form.to_dict()
         data = list(request.form.to_dict().values())
         data = [int(x) for x in data]
 
         mmat1 = data[0:9]
         mmat2 = data[9:18]
         
-        print(mmat1, mmat2)
+        # This will either be a redirect Response object or it will be a render_template response object
+        result = multiply(mmat1, mmat2)
         
-        ans = multiply(mmat1, mmat2)
-        print(type(ans))
-  
-        if isinstance(ans,np.ndarray):
-            return render_template('index.html', data=ans)
-        
-        return ans
-   
-                    
-        # perform matrix multiplication on the two matrices in C++ via my custom matMult module
-#        mat_mult = matMult.multiply(mat1, mat2)
-        #mat_mult = matMult.multiply(mmat1, mmat2)
-        #print("check it:", mat_mult)
-        # if there is a POST request, the website is returned along with data. To see how the data is manipulated,
-        # you can go to the javascript code and look for {{ data }} because that's where the data ends up.
-        
+        return result
 
     # this just returns the visible website.
     return render_template('index.html')
 
-@app.route('/corrupt')
+# corrupt data app.route
+@app.route('/result')
 def corrupt():
     mat = session.get('ans', None)
     mat = np.mat(mat).reshape(3,3)
@@ -70,11 +56,9 @@ def multiply(mat1, mat2):
     session['ans'] = ans
 
     if num == 0:
-        return matrix1 * matrix2
+        ans = matrix1 * matrix2
+        return render_template('index.html', data=ans)
     else:
         ans = (matrix1 * matrix2) + 100
         session['ans'] = ans.flatten().tolist()
         return redirect(url_for('corrupt'))
-
-def tamper_return(t_data):
-    return render_template('index.html', data=t_data)
