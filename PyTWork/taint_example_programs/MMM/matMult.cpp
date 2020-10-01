@@ -1,5 +1,6 @@
-#include "pybind11/include/pybind11.h"
-#include "pybind11/include/stl.h"
+//#include "pybind11/include/pybind11.h"
+//#include <pybind11/include/stl.h>
+#include <pybind11/pybind11.h>
 #include <iostream>
 #include <vector>
 
@@ -42,9 +43,9 @@ std::vector<std::vector<int>> multiply(py::list pyVec) {
     std::vector<std::vector<int>> matOne = constr2DVec(matOneBase);
     std::vector<std::vector<int>> matTwo = constr2DVec(matTwoBase);
     
-    std::vector<std::vector<int>> matThree = matMult(matOne, matTwo);
+    //std::vector<std::vector<int>> matThree = matMult(matOne, matTwo);
     
-    return matThree;
+    return matMult(matOne, matTwo);;
     
 }
 
