@@ -45,7 +45,7 @@ std::vector<std::vector<int>> multiply(py::list pyVec) {
     
     //std::vector<std::vector<int>> matThree = matMult(matOne, matTwo);
     
-    return matMult(matOne, matTwo);;
+    return matMult(matOne, matTwo);
     
 }
 
